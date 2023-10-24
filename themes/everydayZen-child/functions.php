@@ -1,5 +1,5 @@
 <?php
-
+// Load child theme style sheet.
 function everyday_zen_enqueue_styles(){
     wp_enqueue_style(
         "everydayzenchild-style",
@@ -10,3 +10,5 @@ function everyday_zen_enqueue_styles(){
 }
 
 add_action("wp_enqueue_scripts", "everyday_zen_enqueue_styles");
+// Disable theme editor
+define("DISALLOW_FILE_EDIT", true);
