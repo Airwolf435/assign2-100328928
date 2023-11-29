@@ -10,12 +10,37 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
+// ! This footer was taken from the twentytwentyone theme, comments will distinctly mark the parts written by John Keenan for assignment 3
 ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 	</div><!-- #content -->
-
+	<section id="recentPosts">
+	<?php
+	//! Start of custom WP query loop written by John Keenan
+		if(is_front_page() || is_page("About")){
+			$args = array(
+				"posts_per_page" => 3,
+				"orderby" => "date",
+				"order" => "DESC",
+			);
+			$postQuery = new WP_Query($args);
+			while($postQuery->have_posts()){
+				$postQuery->the_post();
+				?>
+				<article class="post-peak">
+					<?php 
+					the_post_thumbnail();
+					the_title();
+					the_excerpt();
+					?>
+				</article>
+				<?php
+			}
+			wp_reset_postdata();
+		}
+	?>
+	</section>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 
 	<footer id="colophon" class="site-footer">
