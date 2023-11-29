@@ -3,6 +3,71 @@ Theme Name: zenStyle
 Author: John Keenan
 */
 
-main{
-    background-color: pink !important;
+@font-face {
+    font-family: tangerine;
+    src: url("./assets/fonts/Tangerine_Bold.ttf");
+}
+
+h1,h2,h3{
+    font-family: tangerine, serif;
+    font-weight: 800;
+    text-shadow: 0.25em 0.25em 0.25em black;
+}
+
+.widget-area .wp-block-heading{
+    font-size: 2.5rem;
+}
+
+.site-main{
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+.sub-footer{
+    text-emphasis: italic;
+    font-size: 1.15rem;
+    color: darkgrey;
+}
+
+#recentPostsWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+.post-peak{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: rgb(8, 68, 31);
+    padding: 2em 1em;
+    border-radius: 8px;
+    flex: 0 1 500px;
+    text-align: center;
+}
+
+.post-peak > img{
+    border: 2px solid black;
+    box-shadow: 0.5em 0.75em 2em black;
+}
+
+.post-peak > p {
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.more-link{
+    display: block;
+    transition: color 150ms linear;
+}
+
+.more-link:hover,.more-link:focus{
+    --highlight-clr: rgb(91, 245, 150);
+    color: var(--highlight-clr);
 }
